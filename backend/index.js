@@ -54,7 +54,7 @@ import cors from'cors';
  app.patch("/toggle-task/:id",async(req ,res) => {
     try {
         const {id} =req.params;
-        const task = await task.findById(id);
+        const task = await Task.findById(id);
         if(!task) {
             return res.status(404).json({ success:false,message:"not found"})
         }
